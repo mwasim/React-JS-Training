@@ -5,8 +5,24 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
+// let heading = React.createElement("h1",
+// null,
+// "Getting Started with React!!")
+
+function Header() {
+  return (
+    <header><h1>Eve's Kitchen</h1></header>
+  )
+}
+
 root.render(
+  // React.createElement("h1",
+  // null,
+  // "Getting Started with React!")
+  //heading
   <React.StrictMode>
+    <Header/>
     <App />
   </React.StrictMode>
 );
