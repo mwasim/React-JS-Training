@@ -10,17 +10,26 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 // null,
 // "Getting Started with React!!")
 
-function Header() {
+function Header(props) {
+  console.log(props);
   return (
-    <header><h1>Eve's Kitchen</h1></header>
+    <header><h1>{props.name}'s Kitchen</h1></header>
   )
 }
 
-function Main() {
+function Main(props) {
   return (
     <section>
-      <p>We serve the most delicious food.</p>
+      <p>We serve the most {props.adjective} food.</p>
     </section>
+  )
+}
+
+function Footer(props) {
+  return (
+    <footer>
+      <p>Copyright {props.year}.</p>
+    </footer>
   )
 }
 
@@ -30,8 +39,9 @@ root.render(
   // "Getting Started with React!")
   //heading
   <React.StrictMode>
-    <Header />
-    <Main />
+    <Header name="Cindy" />
+    <Main adjective="amazing" />
+    <Footer year={new Date().getFullYear()}/>
     <App />
   </React.StrictMode>
 );
