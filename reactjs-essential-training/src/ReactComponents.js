@@ -1,3 +1,18 @@
+const dishes = [
+    "Black Beans Soup",
+    "Chicken Soup",
+    "Mutton Karahi",
+    "Chicken Roast",
+    "Pizza"
+];
+
+const dishObjects = dishes.map((dish, i) => (
+    {
+        id: i,
+        title: dish
+    }
+));
+
 function Header(props) {
     console.log(props);
     return (
@@ -9,6 +24,15 @@ function Main(props) {
     return (
         <section>
             <p>We serve the most {props.adjective} food.</p>
+            <ul>
+                {
+                    props.dishes.map((dishObj) => (
+                        <li key={dishObj.id}>{dishObj.title}</li>
+                    ))
+                /* {props.dishes.map((dish, iterator) => (
+                    <li key={iterator}>{dish}</li>
+                ))} */}
+            </ul>
         </section>
     )
 }
@@ -25,7 +49,7 @@ function ReactComponents() {
     return (
         <div>
             <Header name="Rebecca" />
-            <Main adjective="delecious" />
+            <Main adjective="delecious" dishes={dishObjects} />
             <Footer year={new Date().getFullYear()} />
         </div>
     );
