@@ -16,13 +16,22 @@ function Header() {
   )
 }
 
+function Main() {
+  return (
+    <section>
+      <p>We serve the most delicious food.</p>
+    </section>
+  )
+}
+
 root.render(
   // React.createElement("h1",
   // null,
   // "Getting Started with React!")
   //heading
   <React.StrictMode>
-    <Header/>
+    <Header />
+    <Main />
     <App />
   </React.StrictMode>
 );
