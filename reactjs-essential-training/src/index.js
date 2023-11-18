@@ -16,8 +16,8 @@ root.render(
   // "Getting Started with React!")
   //heading
   <React.StrictMode>
-    <ReactComponents/>
-    <App library="React"/>
+    <ReactComponents library="React"/>
+    <App />
   </React.StrictMode>
 );
 

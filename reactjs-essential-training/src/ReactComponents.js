@@ -18,7 +18,7 @@ const dishObjects = dishes.map((dish, i) => (
 function Header(props) {
     console.log(props);
     return (
-        <header><h1>{props.name}'s Kitchen</h1></header>
+        <header><h1>{props.name}'s Kitchen from {props.library}</h1></header>
     )
 }
 
@@ -49,11 +49,11 @@ function Footer(props) {
     )
 }
 
-function ReactComponents() {
+function ReactComponents({library}) { //instead of passing props, we're destructring actual passed properties e.g. {library}
     return (
         //<div> -- Instead of using Divs we can use React.Fragment
         <React.Fragment>
-            <Header name="Lubna" />
+            <Header name="Lubna" library={library} />
             <Main adjective="delecious" dishes={dishObjects} />
             <Footer year={new Date().getFullYear()} />
         </React.Fragment>
