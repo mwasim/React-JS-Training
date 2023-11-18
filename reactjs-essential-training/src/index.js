@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import ReactComponents from './ReactComponents'
+import ReactState from './ReactStateInComponentTree'
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -17,6 +18,7 @@ root.render(
   //heading
   <React.StrictMode>
     <ReactComponents library="React"/>
+    <ReactState/>
     <App />
   </React.StrictMode>
 );
