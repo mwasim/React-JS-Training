@@ -1,23 +1,26 @@
-import logo from './logo.svg';
 import './App.css';
+import { useState } from 'react';
 
-function App() {
+/*
+//const cities = ["Tokyo", "Lahore", "New York"];
+
+//Destructuring Arrays
+const [firstCity, secondCity] = ["Tokyo", "Lahore", "New York"];
+
+console.log(firstCity);
+console.log(firstCity);*/
+
+function App({ library }) { //instead of passing props, we're destructring actual passed properties e.g. {library}
+  const [emotion, setEmotion] = useState("happy");
+  console.log(setEmotion);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Hello from {library}</h1>
+      <p>Current emotion is {emotion}</p>
+      <button onClick={() => setEmotion("happy")}>Happy</button>
+      <button onClick={() => setEmotion("sad")}>Sad</button>
+      <button onClick={() => setEmotion("excited")}>Excited</button>
     </div>
   );
 }

@@ -17,7 +17,7 @@ root.render(
   //heading
   <React.StrictMode>
     <ReactComponents/>
-    <App />
+    <App library="React"/>
   </React.StrictMode>
 );
 
