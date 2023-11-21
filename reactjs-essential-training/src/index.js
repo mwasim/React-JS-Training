@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import ReactComponents from './ReactComponents'
 import ReactState from './ReactStateInComponentTree'
+import FormsInReact from './FormsInReact';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -17,8 +18,9 @@ root.render(
   // "Getting Started with React!")
   //heading
   <React.StrictMode>
-    <ReactComponents library="React"/>
-    <ReactState/>
+    <ReactComponents library="React" />
+    <ReactState />
+    <FormsInReact />
     <App />
   </React.StrictMode>
 );
