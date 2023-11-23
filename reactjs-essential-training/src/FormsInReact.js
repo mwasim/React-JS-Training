@@ -1,5 +1,7 @@
 import { useRef } from "react"; //Use useRef hook to reach form elements and get it's value
 
+function UncontrolledFormElements(){}
+
 function FormsInReact() {
     const txtTitle = useRef();
     const hexColor = useRef();
