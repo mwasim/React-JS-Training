@@ -107,29 +107,58 @@ export default function Game() {
 
   //Notice how [Array(9).fill(null)] is an array with a single item, which itself is an array of 9 nulls.
   const [history, setHistory] = useState([Array(9).fill(null)]); // useState(Array(9).fill(null));
-  const currentSquares = history[history.length - 1];
+
+  /*
+    Before you can implement jumpTo, you need the Game component 
+    to keep track of which step the user is currently viewing. 
+    To do this, define a new state variable called currentMove, defaulting to 
+  */
+  const [currentMove, setCurrentMove] = useState(0);
+
+  //render the currently selected move, instead of always rendering the final move:
+  //const currentSquares = history[history.length - 1];
+  const currentSquares = history[currentMove];
 
   function handlePlay(nextSquares) {
-    //TODO
-    setHistory([...history, nextSquares]);
+    /*
+      You will now make two changes to the Game’s handlePlay function which is called when you click on a square.
+
+      1. If you “go back in time” and then make a new move from that point, you only want to keep the history 
+         up to that point. Instead of adding nextSquares after all items (... spread syntax) in history, 
+         you’ll add it after all items in history.slice(0, currentMove + 1) 
+         so that you’re only keeping that portion of the old history.
+      2. Each time a move is made, you need to update currentMove to point to the latest history entry.
+    */
+    //setHistory([...history, nextSquares]); //OLD WAY
+
+    //1. NEW WAY - keep only portion of the old history
+    const nextHistory = [...history.slice(0, currentMove + 1), nextSquares];
+    setHistory(nextHistory);
+
+    //2. Update currentMove to point to the latest history entry
+    setCurrentMove(nextHistory.length - 1);
+
+    //toggle xIsNext
     setXIsNext(!xIsNext);
   }
 
-  function jumpTo(nextMove){
-    //TODO
+  function jumpTo(nextMove) {
+    //update current move
+    setCurrentMove(nextMove);
+    setXIsNext(nextMove % 2 === 0);
   }
 
   const moves = history.map((squares, move) => {
     let description;
-    if(move > 0) {
+    if (move > 0) {
       description = `Go to move #${move}`;
-    }else{
+    } else {
       description = `Go to game start`;
     }
 
     return (
       <li key={move}>
-        <button onClick={()=> jumpTo(move)}>{description}</button>
+        <button onClick={() => jumpTo(move)}>{description}</button>
       </li>
     );
   });
