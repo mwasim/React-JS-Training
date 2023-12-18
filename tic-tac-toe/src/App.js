@@ -16,7 +16,11 @@ function Square({ value, onSquareClick }) {
   );
 }
 
-function calculateWinnder(squares) {
+function calculateWinner(squares) {
+  if (squares == null) {
+    return null;
+  }
+
   const lines = [
     [0, 1, 2],
     [3, 4, 5],
@@ -39,18 +43,18 @@ function calculateWinnder(squares) {
   return null;
 }
 
-export default function Board() {
+function Board({ xIsNext, squares, onPlay }) {
   const xPlayer = "X",
     oPlayer = "O";
 
-  const [xIsNext, setXIsNext] = useState(true);
+  //const [xIsNext, setXIsNext] = useState(true);
 
   //Array(9).fill(null) creates an array with nine elements and sets each of them to null.
-  const [squares, setSquares] = useState(Array(9).fill(null));
+  //const [squares, setSquares] = useState(Array(9).fill(null));
 
   function handleClick(index) {
     //if square value is already set to X or O (not null), return - no need to set value to this square again
-    if (squares[index] || calculateWinnder(squares)) {
+    if (squares[index] || calculateWinner(squares)) {
       return;
     }
 
@@ -62,11 +66,12 @@ export default function Board() {
       nextSquares[index] = oPlayer;
     }
 
-    setSquares(nextSquares);
-    setXIsNext(!xIsNext);
+    onPlay(nextSquares);
+    // setSquares(nextSquares);
+    // setXIsNext(!xIsNext);
   }
 
-  var winnerSquare = calculateWinnder(squares);
+  var winnerSquare = calculateWinner(squares);
   let status;
   if (winnerSquare) {
     //console.log("The game is won by: " + winnerSquare);
@@ -92,6 +97,37 @@ export default function Board() {
         <Square value={squares[6]} onSquareClick={() => handleClick(6)} />
         <Square value={squares[7]} onSquareClick={() => handleClick(7)} />
         <Square value={squares[8]} onSquareClick={() => handleClick(8)} />
+      </div>
+    </>
+  );
+}
+
+export default function Game() {
+  const [xIsNext, setXIsNext] = useState(true);
+
+  //Notice how [Array(9).fill(null)] is an array with a single item, which itself is an array of 9 nulls.
+  const [history, setHistory] = useState([Array(9).fill(null)]); // useState(Array(9).fill(null));
+  const currentSquares = history[history.length - 1];
+
+  function handlePlay(nextSquares) {
+    //TODO
+    setHistory([...history, nextSquares]);
+    setXIsNext(!xIsNext);
+  }
+
+  return (
+    <>
+      <div className="game">
+        <div className="game-board">
+          <Board
+            xIsNext={xIsNext}
+            squares={currentSquares}
+            onPlay={handlePlay}
+          />
+        </div>
+        <div className="game-info">
+          <ol>{/*TODO*/}</ol>
+        </div>
       </div>
     </>
   );
