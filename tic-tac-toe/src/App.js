@@ -16,7 +16,33 @@ function Square({ value, onSquareClick }) {
   );
 }
 
+function calculateWinnder(squares) {
+  const lines = [
+    [0, 1, 2],
+    [3, 4, 5],
+    [6, 7, 8],
+    [0, 3, 6],
+    [1, 4, 7],
+    [2, 5, 8],
+    [0, 4, 8],
+    [2, 4, 6],
+  ];
+
+  for (let index = 0; index < lines.length; index++) {
+    const [a, b, c] = lines[index];
+
+    if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
+      return squares[a];
+    }
+  }
+
+  return null;
+}
+
 export default function Board() {
+  const xPlayer = "X",
+    oPlayer = "O";
+
   const [xIsNext, setXIsNext] = useState(true);
 
   //Array(9).fill(null) creates an array with nine elements and sets each of them to null.
@@ -24,24 +50,34 @@ export default function Board() {
 
   function handleClick(index) {
     //if square value is already set to X or O (not null), return - no need to set value to this square again
-    if (squares[index]) {
+    if (squares[index] || calculateWinnder(squares)) {
       return;
     }
 
     const nextSquares = squares.slice();
 
     if (xIsNext) {
-      nextSquares[index] = "X";
+      nextSquares[index] = xPlayer;
     } else {
-      nextSquares[index] = "O";
+      nextSquares[index] = oPlayer;
     }
 
     setSquares(nextSquares);
     setXIsNext(!xIsNext);
   }
 
+  var winnerSquare = calculateWinnder(squares);
+  let status;
+  if (winnerSquare) {
+    //console.log("The game is won by: " + winnerSquare);
+    status = "Winner: " + winnerSquare;
+  } else {
+    status = "Next Player: " + (xIsNext ? xPlayer : oPlayer);
+  }
+
   return (
     <>
+      <div className="status">{status}</div>
       <div className="board-row">
         <Square value={squares[0]} onSquareClick={() => handleClick(0)} />
         <Square value={squares[1]} onSquareClick={() => handleClick(1)} />
