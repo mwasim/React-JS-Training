@@ -103,7 +103,8 @@ function Board({ xIsNext, squares, onPlay }) {
 }
 
 export default function Game() {
-  const [xIsNext, setXIsNext] = useState(true);
+  //Avoid storing state when it can be calculated to avoid bugs, we can calculate the xIsNext using formula as below
+  //const [xIsNext, setXIsNext] = useState(true);
 
   //Notice how [Array(9).fill(null)] is an array with a single item, which itself is an array of 9 nulls.
   const [history, setHistory] = useState([Array(9).fill(null)]); // useState(Array(9).fill(null));
@@ -114,6 +115,10 @@ export default function Game() {
     To do this, define a new state variable called currentMove, defaulting to 
   */
   const [currentMove, setCurrentMove] = useState(0);
+
+  /*always try to avoid redundant state. Simplifying what you store in state reduces bugs 
+    and makes your code easier to understand. */
+  const xIsNext = currentMove % 2 === 0;
 
   //render the currently selected move, instead of always rendering the final move:
   //const currentSquares = history[history.length - 1];
@@ -139,13 +144,13 @@ export default function Game() {
     setCurrentMove(nextHistory.length - 1);
 
     //toggle xIsNext
-    setXIsNext(!xIsNext);
+    //setXIsNext(!xIsNext);
   }
 
   function jumpTo(nextMove) {
     //update current move
     setCurrentMove(nextMove);
-    setXIsNext(nextMove % 2 === 0);
+    //setXIsNext(nextMove % 2 === 0);
   }
 
   const moves = history.map((squares, move) => {
