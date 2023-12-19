@@ -80,6 +80,12 @@ function Board({ xIsNext, squares, onPlay }) {
     status = "Next Player: " + (xIsNext ? xPlayer : oPlayer);
   }
 
+  //console.log(squares);
+
+  const boardRows = squares.map((square, index) => {
+    console.log("Square: " + square + " at index: " + index);    
+  });
+
   return (
     <>
       <div className="status">{status}</div>
@@ -156,6 +162,7 @@ export default function Game() {
   const moves = history.map((squares, move) => {
     let description;
     if (move > 0) {
+      //let location = `Location: {}`;
       if (move === currentMove) {
         description = `You are at move #${move}`;
       } else description = `Go to move #${move}`;
@@ -167,11 +174,7 @@ export default function Game() {
     if (move === currentMove) content = description;
     else content = <button onClick={() => jumpTo(move)}>{description}</button>;
 
-    return (
-      <li key={move}>
-        {content}
-      </li>
-    );
+    return <li key={move}>{content}</li>;
   });
 
   return (
