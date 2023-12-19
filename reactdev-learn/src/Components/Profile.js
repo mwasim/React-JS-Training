@@ -1,4 +1,4 @@
-import { GetImageUrl } from "./Utils";
+import { GetImageUrl, GetImageUrlByImageId } from "./Utils";
 
 function Avatar({ person, size = 100 }) {
   //const imageUrl = `https://i.imgur.com/${person.imageId}.jpg`;
@@ -25,6 +25,35 @@ export function NamedPorfile() {
   );
 }
 
+export function NotableScientistProfile({person, imageSize = 70}) {
+  return (
+    <section className="profile">
+      <h2>{person.name}</h2>
+      <img
+        className="avatar"
+        src={GetImageUrlByImageId(person.imageId)}
+        alt={person.name}
+        width={imageSize}
+        height={imageSize}
+      />
+      <ul>
+        <li>
+          <b>Profession: </b>
+          {person.profession}
+        </li>
+        <li>
+          <b>Awards: {person.awards.length} </b>
+          ({person.awards.join(", ")})
+        </li>
+        <li>
+          <b>Discovered: </b>
+          {person.discovery}
+        </li>
+      </ul>
+    </section>
+  );
+}
+
 export default function Profile() {
   return (
     <>
@@ -34,9 +63,7 @@ export default function Profile() {
           size={100}
         />
       </Card>
-      <Card>
-        This is some text
-      </Card>
+      <Card>This is some text</Card>
       <Avatar person={{ name: "Lin Lanying", imageId: "1bX5QH6" }} size={80} />
     </>
   );
