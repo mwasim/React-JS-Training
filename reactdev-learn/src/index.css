@@ -42,10 +42,6 @@ code {
   font-size: 1.2em;
 }
 
-ul {
-  padding-inline-start: 20px;
-}
-
 .avatar { margin: 5px; border-radius: 50%; min-height: 70px; }
 .profile {
   border: 1px solid #aaa;
@@ -55,5 +51,17 @@ ul {
 }
 h1, h2 { margin: 5px; }
 h1 { margin-bottom: 10px; }
-ul { padding: 0px 10px 0px 20px; }
-li { margin: 5px; }
+
+ul {
+  padding-inline-start: 20px;
+}
+
+ul { list-style-type: none; padding: 0px 10px; }
+li { 
+  margin-bottom: 10px; 
+  display: grid; 
+  grid-template-columns: auto 1fr;
+  gap: 20px;
+  align-items: center;
+}
+img { width: 100px; height: 100px; border-radius: 50%; }

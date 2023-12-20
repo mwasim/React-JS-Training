@@ -1,3 +1,7 @@
+import { people } from "./PeopleData";
+import { GetImageUrl } from "./Utils";
+
+/*
 const people = [
   {
     id: 0,
@@ -24,16 +28,54 @@ const people = [
     name: "Subrahmanyan Chandrasekha",
     profession: "astrophysicist",
   },
-];
+];*/
+
+function PeopleListItems(persons) {
+  //console.log(persons);
+  const listItems = persons.map((person) => (
+    <li key={person.id}>
+      <img src={GetImageUrl({ person })} alt={person.name} />
+      <p>
+        <strong>{person.name}:</strong>
+        {" " + person.profession + " "}
+        known for {person.accomplishment}
+      </p>
+    </li>
+  ));
+
+  return listItems;
+}
+
+function All() {
+  const listItems = PeopleListItems(people);
+
+  return (
+    <>
+      <h2>All Scientists</h2>
+      <ul>{listItems}</ul>
+    </>
+  );
+}
+
+function Chemists() {
+  //creates a new array of people with profession of chemist
+  const chemists = people.filter((person) => person.profession === "chemist");
+
+  const listItems = PeopleListItems(chemists);
+
+  return (
+    <>
+      <h2>Chemists</h2>
+      <ul>{listItems}</ul>
+    </>
+  );
+}
 
 export default function PeopleList() {
-  const listItems = people.map((person) => {
-    return (
-      <li key={person.id}>
-        {person.name}: {person.profession}
-      </li>
-    );
-  });
-
-  return <ul>{listItems}</ul>;
+  return (
+    <>
+      <All />
+      <Chemists />
+    </>
+  );
 }
