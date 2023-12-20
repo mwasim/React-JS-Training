@@ -3,14 +3,21 @@ function Item({ name, isPacked }) {
     If isPacked is true, the component will return nothing, null. 
     Otherwise, it will return JSX to render.
     */
-  if (isPacked) {
-    return null;
-  }
+  //   if (isPacked) {
+  //     return null;
+  //   }
 
   return (
     <li className="item">
-      {name}
+      {/* {
+        //Using ternary operator
+        isPacked ? name + " ✔" : name
+      } */}
       {/* {name} {isPacked ? " ✔" : ""} */}
+      {
+        /*Using ternary operator, and nesting more JSX using newlines and parantheses*/
+        isPacked ? <del>{name + " ✔"}</del> : name
+      }
     </li>
   );
 }
