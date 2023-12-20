@@ -78,23 +78,47 @@ export default function PeopleList() {
     <>
       <All />
       <Chemists />
-      <hr/>
+      <hr />
     </>
   );
 }
 
+function Recipe({ id, name, ingredients }) {
+  return (
+    <Fragment key={id}>
+      <h3>Recipe: {name}</h3>
+      <h4>Ingredients</h4>
+      <ul>
+        {ingredients.map((ingredient) => (
+          <li key={ingredient}>{ingredient}</li>
+        ))}
+      </ul>
+    </Fragment>
+  );
+}
+
 export function Recipes() {
+  //   var recipeListItems = recipes.map((recipe) => {
+  //     return (
+  //       <Fragment key={recipe.id}>
+  //         <h3>Recipe: {recipe.name}</h3>
+  //         <h4>Ingredients</h4>
+  //         <ul>
+  //           {recipe.ingredients.map((ingredient) => (
+  //             <li key={ingredient}>{ingredient}</li>
+  //           ))}
+  //         </ul>
+  //       </Fragment>
+  //     );
+  //   });
+
+  //After extracting out the Recipe component
   var recipeListItems = recipes.map((recipe) => {
     return (
-      <Fragment key={recipe.id}>
-        <h3>Recipe: {recipe.name}</h3>
-        <h4>Ingredients</h4>
-        <ul>
-          {recipe.ingredients.map((ingredient) => (
-            <li key={ingredient}>{ingredient}</li>
-          ))}
-        </ul>
-      </Fragment>
+      <Recipe
+        key={recipe.id}
+        {...recipe}
+      />
     );
   });
 
@@ -102,7 +126,7 @@ export function Recipes() {
     <>
       <h1>Recipes</h1>
       {recipeListItems}
-      <hr/>
+      <hr />
     </>
   );
 }
