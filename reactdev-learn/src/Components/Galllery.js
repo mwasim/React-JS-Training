@@ -1,6 +1,5 @@
 import Profile from "./Profile";
 import { NamedPorfile, NotableScientistProfile } from "./Profile";
-import { GetImageUrlByImageId } from "./Utils";
 
 export function NotableScientistsGallery() {
   return (

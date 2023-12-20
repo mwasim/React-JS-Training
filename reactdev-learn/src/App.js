@@ -1,6 +1,7 @@
 import Gallery from "./Components/Galllery";
 import TodoList from "./Components/TodoList";
 import { NotableScientistsGallery } from "./Components/Galllery";
+import PackingList from "./Components/PackingList";
 
 export default function App() {
   return (
@@ -8,6 +9,7 @@ export default function App() {
       <Gallery />
       <NotableScientistsGallery/>
       <TodoList />
+      <PackingList/>
     </>
   );
 }
