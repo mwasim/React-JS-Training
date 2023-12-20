@@ -1,5 +1,7 @@
-import { people } from "./PeopleData";
+import { people } from "./Data/People";
+import { recipes } from "./Data/Recipes";
 import { GetImageUrl } from "./Utils";
+import { Fragment } from "react";
 
 /*
 const people = [
@@ -76,6 +78,31 @@ export default function PeopleList() {
     <>
       <All />
       <Chemists />
+      <hr/>
+    </>
+  );
+}
+
+export function Recipes() {
+  var recipeListItems = recipes.map((recipe) => {
+    return (
+      <Fragment key={recipe.id}>
+        <h3>Recipe: {recipe.name}</h3>
+        <h4>Ingredients</h4>
+        <ul>
+          {recipe.ingredients.map((ingredient) => (
+            <li key={ingredient}>{ingredient}</li>
+          ))}
+        </ul>
+      </Fragment>
+    );
+  });
+
+  return (
+    <>
+      <h1>Recipes</h1>
+      {recipeListItems}
+      <hr/>
     </>
   );
 }

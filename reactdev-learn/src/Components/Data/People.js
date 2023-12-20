@@ -1,6 +1,6 @@
 export const people = [
   {
-    id: 0,
+    id: 0,// Used in JSX as a key
     name: "Creola Katherine Johnson",
     profession: "mathematician",
     accomplishment: "spaceflight calculations",
