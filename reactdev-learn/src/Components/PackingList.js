@@ -7,13 +7,21 @@ function Item({ name, isPacked }) {
   //     return null;
   //   }
 
+  //Conditionally assigning JSX to a variable - produces same output and it's the most flexible way
+  let itemContent = name + '❌';
+  if (isPacked) {
+    //itemContent = name + " ✔";
+    //it works for arbitrary JSX too
+    itemContent = <del>{name + " ✔"}</del>;
+  }
+
   return (
     <li className="item">
       {/* {
         //Using ternary operator
         isPacked ? name + " ✔" : name
       } */}
-      
+
       {/* {name} {isPacked ? " ✔" : ""} */}
 
       {/*
@@ -24,7 +32,10 @@ function Item({ name, isPacked }) {
       {/* Same output using && (AND) operator 
           You can read this as “if isPacked, then (&&) render the checkmark, otherwise, render nothing”.  
       */}
-      {name} {isPacked && " ✔"}
+      {/* {name} {isPacked && " ✔"} */}
+
+      {/* Conditionally assigning JSX to a variable */}
+      {itemContent}
     </li>
   );
 }
