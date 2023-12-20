@@ -1,0 +1,15 @@
+
+  
+  .poem {
+    text-align: center;
+  }
+  .poem p {
+    font-family: Georgia, serif;
+    font-size: 20px;
+    font-style: italic;
+  }
+  .poem hr {
+    margin: 0 120px 0 120px;
+    border: 1px dashed #45c3d8;
+  }
+  

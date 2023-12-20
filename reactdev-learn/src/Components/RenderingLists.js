@@ -114,12 +114,7 @@ export function Recipes() {
 
   //After extracting out the Recipe component
   var recipeListItems = recipes.map((recipe) => {
-    return (
-      <Recipe
-        key={recipe.id}
-        {...recipe}
-      />
-    );
+    return <Recipe key={recipe.id} {...recipe} />;
   });
 
   return (
