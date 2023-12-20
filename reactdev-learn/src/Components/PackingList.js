@@ -13,11 +13,18 @@ function Item({ name, isPacked }) {
         //Using ternary operator
         isPacked ? name + " ✔" : name
       } */}
+      
       {/* {name} {isPacked ? " ✔" : ""} */}
-      {
-        /*Using ternary operator, and nesting more JSX using newlines and parantheses*/
+
+      {/*
+        //Using ternary operator, and nesting more JSX using newlines and parantheses
         isPacked ? <del>{name + " ✔"}</del> : name
-      }
+     */}
+
+      {/* Same output using && (AND) operator 
+          You can read this as “if isPacked, then (&&) render the checkmark, otherwise, render nothing”.  
+      */}
+      {name} {isPacked && " ✔"}
     </li>
   );
 }
