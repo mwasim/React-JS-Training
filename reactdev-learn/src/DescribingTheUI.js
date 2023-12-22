@@ -5,10 +5,12 @@ import PackingList from "./Components/PackingList";
 import PeopleList from "./Components/RenderingLists";
 import { Recipes } from "./Components/RenderingLists";
 import Poem from "./Components/Poem";
+import Clock from "./Components/Clock";
 
-export default function App() {
+export default function DescribingTheUI() {
   return (
-    <>
+    <>  
+      <Clock/>
       <Poem/>
       <Recipes/>
       <PeopleList />

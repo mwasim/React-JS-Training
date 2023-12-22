@@ -65,3 +65,13 @@ li {
   align-items: center;
 }
 img { width: 100px; height: 100px; border-radius: 50%; }
+
+.day {
+  background: #fff;
+  color: #222;
+}
+.night {
+  background: #222;
+  color: #fff;
+}
+
