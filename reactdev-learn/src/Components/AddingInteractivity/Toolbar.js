@@ -3,7 +3,7 @@ function Button({ onClick, children }) {
 }
 
 export default function Toolbar({ onPlayMovie, onUploadImage }) {
-  return <div>
+  return <div style={{backgroundColor: "darkgreen", padding: "10px"}} onClick={()=>{alert("You clicked on the Toolbar!")}}>
     <Button onClick={onPlayMovie}>Play Movie</Button>
     {' '}
     <Button onClick={onUploadImage}>Upload Image</Button>
