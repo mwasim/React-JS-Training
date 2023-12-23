@@ -1,6 +1,7 @@
 import Toolbar from "./Components/AddingInteractivity/Toolbar";
 //import SignUp from "./Components/AddingInteractivity/SignupForm";
 import SculptureGallery from "./Components/AddingInteractivity/SculptureGallery";
+import NameFormChallenge from "./Components/AddingInteractivity/NameFormChallenge";
 
 export default function AddingInteractivity() {
   return (
@@ -16,6 +17,7 @@ export default function AddingInteractivity() {
       />
       {/* <SignUp /> */}
       <SculptureGallery/>
+      <NameFormChallenge/>
     </>
   );
 }

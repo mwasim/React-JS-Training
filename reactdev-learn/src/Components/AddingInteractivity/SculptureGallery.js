@@ -15,12 +15,12 @@ export default function SculptureGallery() {
   */
   const [index, setIndex] = useState(0); //pass intial value to useState
   const [showMore, setShowMore] = useState(false);
-  console.log(`index = ` + index);
+  //console.log(`index = ` + index);
 
   let hasNext = index < sculptureList.length - 1;
   let hasPrev = index > 0;
 
-  console.log("hasNext: " + hasNext + ", Items count: " + sculptureList.length);
+  //console.log("hasNext: " + hasNext + ", Items count: " + sculptureList.length);
 
   function handlePrevClick() {
     if (hasPrev) {
@@ -65,6 +65,7 @@ export default function SculptureGallery() {
         {showMore ? "Hide" : "Show"} Details
       </button>
       {showMore && <p>{sculpture.description}</p>}
+      <hr/>
     </>
   );
 }
