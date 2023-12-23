@@ -14,7 +14,7 @@ function Button({ onClick, children }) {
 export default function Toolbar({ onPlayMovie, onUploadImage }) {
   return (
     <div
-      style={{ backgroundColor: "darkgreen", padding: "10px" }}
+      style={{ backgroundColor: "darkgreen", padding: "10px", marginBottom: "10px" }}
       onClick={() => {
         alert("You clicked on the Toolbar!");
       }}
