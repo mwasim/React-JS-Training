@@ -18,11 +18,11 @@ export default function RequestTracker() {
   }
 
   return (
-    <>
-      <h3>Pending: {pending}</h3>
-      <h3>completed: {completed}</h3>
+      <div style={{marginBottom: "20px"}}>
+        <h3>Pending: {pending}</h3>
+        <h3>completed: {completed}</h3>
 
-      <button onClick={handleClick}>Buy</button>
-    </>
+        <button onClick={handleClick}>Buy</button>
+      </div>
   );
 }
