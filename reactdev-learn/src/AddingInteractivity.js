@@ -3,6 +3,7 @@ import Toolbar from "./Components/AddingInteractivity/Toolbar";
 import SculptureGallery from "./Components/AddingInteractivity/SculptureGallery";
 import NameFormChallenge from "./Components/AddingInteractivity/NameFormChallenge";
 import FeedbackFormChallenge from "./Components/AddingInteractivity/FeedbackFormChallenge";
+import TrafficLight from "./Components/AddingInteractivity/TrafficLight";
 
 export default function AddingInteractivity() {
   return (
@@ -17,9 +18,10 @@ export default function AddingInteractivity() {
         }}
       />
       {/* <SignUp /> */}
-      <SculptureGallery/>
-      <NameFormChallenge/>
-      <FeedbackFormChallenge/>
+      <SculptureGallery />
+      <NameFormChallenge />
+      <FeedbackFormChallenge />
+      <TrafficLight />
     </>
   );
 }
