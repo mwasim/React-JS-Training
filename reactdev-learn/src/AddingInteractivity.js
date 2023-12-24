@@ -4,6 +4,7 @@ import SculptureGallery from "./Components/AddingInteractivity/SculptureGallery"
 import NameFormChallenge from "./Components/AddingInteractivity/NameFormChallenge";
 import FeedbackFormChallenge from "./Components/AddingInteractivity/FeedbackFormChallenge";
 import TrafficLight from "./Components/AddingInteractivity/TrafficLight";
+import RequestTracker from "./Components/AddingInteractivity/RequestTracker";
 
 export default function AddingInteractivity() {
   return (
@@ -22,6 +23,7 @@ export default function AddingInteractivity() {
       <NameFormChallenge />
       <FeedbackFormChallenge />
       <TrafficLight />
+      <RequestTracker/>
     </>
   );
 }
