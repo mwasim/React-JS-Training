@@ -2,6 +2,28 @@ import { useState } from "react";
 
 /*
     UPDATE OBJECTS IN STATE (REACT STATE) DEMO (not premitive values but OBJECTS)
+
+    WRONG APPROACH:
+    onPointerMove={e => {
+        position.x = e.clientX;
+        position.y = e.clientY;
+    }}
+
+    CORRECT APPROACH:
+    To actually trigger a re-render in this case, create a new object and pass it to the state setting function:
+    onPointerMove={e => {
+        setPosition({
+            x: e.clientX,
+            y: e.clientY
+        });
+    }}
+
+    Local mutation is fine, for example, below code is fine,
+    const nextPosition = {};
+    nextPosition.x = e.clientX;
+    nextPosition.y = e.clientY;
+    setPosition(nextPosition);
+    
 */
 export default function MovingDot() {
   const [position, setPosition] = useState({ x: 0, y: 0 });
