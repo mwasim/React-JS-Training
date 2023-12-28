@@ -5,6 +5,7 @@ import NameFormChallenge from "./Components/AddingInteractivity/NameFormChalleng
 import FeedbackFormChallenge from "./Components/AddingInteractivity/FeedbackFormChallenge";
 import TrafficLight from "./Components/AddingInteractivity/TrafficLight";
 import RequestTracker from "./Components/AddingInteractivity/RequestTracker";
+import PersonForm from "./Components/AddingInteractivity/PersonForm";
 // import MovingDot from "./Components/AddingInteractivity/MovingDot";
 
 export default function AddingInteractivity() {
@@ -24,8 +25,9 @@ export default function AddingInteractivity() {
       <NameFormChallenge />
       <FeedbackFormChallenge />
       <TrafficLight />
-      <RequestTracker/>
+      <RequestTracker />
       {/* <MovingDot/> */}
+      <PersonForm />
     </>
   );
 }
