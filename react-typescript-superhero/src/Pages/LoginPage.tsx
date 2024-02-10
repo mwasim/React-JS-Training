@@ -1,4 +1,5 @@
 import React from "react";
+import Input from "../Components/Input";
 
 const LoginPage = () => {
   return (
@@ -8,21 +9,8 @@ const LoginPage = () => {
           Login
         </h1>
         <div className="bg-white w-full p-6 min-h-[150px] flex flex-col gap-3 rounded-xl drop-shadow-xl">
-          <input
-            type="text"
-            className="flex-1 bg-transparent border-2 border-gray-300 rounded-full px-3 py-1 placeholder-gray-300"
-            placeholder="Enter name"
-          />
-          <input
-            type="text"
-            className="flex-1 bg-transparent border-2 border-gray-300 rounded-full px-3 py-1 placeholder-gray-300"
-            placeholder="Enter name"
-          />
-          <input
-            type="text"
-            className="flex-1 bg-transparent border-2 border-gray-300 rounded-full px-3 py-1 placeholder-gray-300"
-            placeholder="Enter name"
-          />
+          <Input name="email" type="email" />
+          <Input name="password" type="password" />
         </div>
       </div>
     </div>
