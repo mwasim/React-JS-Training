@@ -7,14 +7,13 @@ import {
   increment,
   incrementByAmount,
 } from "./features/counter/counterSlice";
+import { useFetchBreedsQuery } from "./features/dogs/dogApiSlice";
 
 function App() {
   const count = useAppSelector((state) => state.counter.value);
   const dispatch = useAppDispatch();
 
-  function handleClick() {
-    dispatch(increment());
-  }
+  const { data = [], isFetching } = useFetchBreedsQuery(5);
 
   return (
     <>
@@ -36,6 +35,27 @@ function App() {
             Increment By 3
           </button>
         </p>
+        <div>
+          <p>Number of dogs fetched: {data.length}</p>
+          <table>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Picture</th>
+              </tr>
+            </thead>
+            <tbody>
+              {data.map((breed) => (
+                <tr key={breed.id}>
+                  <td>{breed.name}</td>
+                  <td>
+                    <img src={breed.image.url} alt={breed.name} height={250} />
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
         <p>
           Edit <code>src/App.tsx</code> and save to test HMR
         </p>
