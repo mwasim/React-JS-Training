@@ -8,12 +8,14 @@ import {
   incrementByAmount,
 } from "./features/counter/counterSlice";
 import { useFetchBreedsQuery } from "./features/dogs/dogApiSlice";
+import { useState } from "react";
 
 function App() {
   const count = useAppSelector((state) => state.counter.value);
   const dispatch = useAppDispatch();
 
-  const { data = [], isFetching } = useFetchBreedsQuery(5);
+  const [numDogs, setNumDogs] = useState(10);
+  const { data = [], isFetching } = useFetchBreedsQuery(numDogs);
 
   return (
     <>
@@ -35,6 +37,17 @@ function App() {
             Increment By 3
           </button>
         </p>
+        <div>
+          <p>Dogs to fetch:</p>
+          <select
+            value={numDogs}
+            onChange={(e) => setNumDogs(Number(e.target.value))}
+          >
+            <option value="5">5</option>
+            <option value="10">10</option>
+            <option value="20">20</option>
+          </select>
+        </div>
         <div>
           <p>Number of dogs fetched: {data.length}</p>
           <table>
