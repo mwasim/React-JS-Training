@@ -1,1 +1,1 @@
-# ReactJS
+# React JS Training
