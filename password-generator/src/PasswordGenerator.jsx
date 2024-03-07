@@ -28,7 +28,7 @@ const PasswordGenerator = () => {
       generatedPassword += validChars.charAt(randomIndex);
     }
 
-    console.log(`random password: ${generatedPassword}`);
+    //console.log(`random password: ${generatedPassword}`);
 
     setPassword(generatedPassword);
   };
@@ -82,6 +82,11 @@ const PasswordGenerator = () => {
           >
             Generate Password
           </button>
+          {password && (
+            <p className="font-normal text-white mt-2">
+              Generated Password: <span className="font-bold">{password}</span>
+            </p>
+          )}
         </div>
       </div>
     </div>
