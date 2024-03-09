@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { GrFormAdd } from "react-icons/gr";
+import { RiDeleteBin5Fill } from "react-icons/ri";
+import ReactSwitch from "react-switch";
 
 const ToDoMenu = () => {
   const [task, setTask] = useState(``);
@@ -13,14 +15,27 @@ const ToDoMenu = () => {
         toggle: false,
       };
 
-      setList(toDo, ...list);
+      setList([toDo, ...list]);
 
       //reset task
       setTask(``);
     }
   };
 
-  console.log(list);
+  const deleteTask = (taskId) => {
+    const filtered = list.filter((task) => task.id !== taskId);
+    setList(filtered);
+  };
+
+  const toggleTask = (taskId) => {
+    const updatedTaskList = list.map((task) =>
+      task.id === taskId ? { ...task, toggle: !task.toggle } : task
+    );
+
+    setList(updatedTaskList);
+  };
+
+  //console.log(list);
 
   return (
     <div className="mx-auto mt-8">
@@ -40,6 +55,54 @@ const ToDoMenu = () => {
         >
           <GrFormAdd />
         </button>
+      </div>
+      <div className="flex flex-col items-center">
+        <div
+          className={`${
+            list.length > 0 &&
+            `bg-gradient-to-r from-sky-500 via-indigo-100 to-pink-100 pt-2 pl-2 pr-2`
+          }`}
+        >
+          {list.length === 0 ? (
+            <h1 className="font-bold text-3xl text-purple-700 p-2">
+              Add Tasks
+            </h1>
+          ) : (
+            list.map((task) => (
+              <div
+                className={`flex w-[350px] font-bold items-center space-x-2 bg-gray-200 p-2 rounded-md mb-2 
+                ${task.toggle ? `bg-green-800 text-cyan-50` : `bg-violet-500`}`}
+                key={task.id}
+              >
+                <h4
+                  className={`flex-grow ${task.toggle ? `line-through` : ``}`}
+                >
+                  {task.title}
+                </h4>
+                <button
+                  className="text-red-600 font-bold text-3xl py-1 px-2 rounded"
+                  onClick={() => deleteTask(task.id)}
+                >
+                  <RiDeleteBin5Fill />
+                </button>
+                <ReactSwitch
+                  checked={task.toggle}
+                  height={20}
+                  width={40}
+                  handleDiameter={18}
+                  onColor="#4299e1"
+                  offColor="#ccc"
+                  checkedIcon={false}
+                  uncheckedIcon={false}
+                  onChange={() => {
+                    //console.log(this.checked);
+                    toggleTask(task.id);
+                  }}
+                />
+              </div>
+            ))
+          )}
+        </div>
       </div>
     </div>
   );
