@@ -1,5 +1,8 @@
 //1. BUILD YOUR OWN REACT DEMO
-import "./build_your_own_react.js";
+//import "./build_your_own_react.js";
+
+//2. Expression Slots
+import "./expression_slots.js";
 
 /*
 import React from "react";
