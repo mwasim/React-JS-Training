@@ -24,6 +24,8 @@ const message = {
   },
 };
 
+const profileUrl = `/users/${message.handle}`;
+
 const element = (
   <article style={{ filter: "var(--shadow-elevation-high)" }}>
     <header>
@@ -31,13 +33,13 @@ const element = (
         src={message.author.avatarSrc}
         alt={message.author.avatarDescription}
       />
-      <a href={`/users/${message.handle}`}>{message.author.name}</a>
+      <a href={profileUrl}>{message.author.name}</a>
     </header>
     <p>{message.content}</p>
     <footer>
       Posted
       {` `}
-      <time datetime={message.published}>{formateDate(message.published)}</time>
+      <time dateTime={message.published}>{formateDate(message.published)}</time>
     </footer>
   </article>
 );
