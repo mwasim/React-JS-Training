@@ -32,6 +32,9 @@ import "./App.css";
 ////8.2 Mapping over data - exercise - Shopping Cart demo
 import MappingOverDataShoppingCart from "./mapping_over_data_ex_shoppingcart";
 
+//9. Friends list with screen reader support
+// import FriendsListWithScreenReaderSupport from "./friend_list_screen_readers_support";
+
 function App() {
   return (
     <>
@@ -41,6 +44,7 @@ function App() {
       {/* <MappingOverData /> */}
       {/* <MappingOverDataAvatarDemo /> */}
       <MappingOverDataShoppingCart />
+      {/* <FriendsListWithScreenReaderSupport /> */}
     </>
   );
 }
