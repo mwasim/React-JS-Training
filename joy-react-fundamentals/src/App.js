@@ -27,7 +27,10 @@ import "./App.css";
 //import MappingOverData from "./mapping_over_data_demo";
 
 //8.1 Mapping over data - exercise - avatar demo
-import MappingOverDataAvatarDemo from "./mapping_over_data_ex_avatars";
+//import MappingOverDataAvatarDemo from "./mapping_over_data_ex_avatars";
+
+////8.2 Mapping over data - exercise - Shopping Cart demo
+import MappingOverDataShoppingCart from "./mapping_over_data_ex_shoppingcart";
 
 function App() {
   return (
@@ -36,7 +39,8 @@ function App() {
       {/* <ButtonComponentDemo /> */}
       {/* <FragmentsDemo /> */}
       {/* <MappingOverData /> */}
-      <MappingOverDataAvatarDemo />
+      {/* <MappingOverDataAvatarDemo /> */}
+      <MappingOverDataShoppingCart />
     </>
   );
 }
