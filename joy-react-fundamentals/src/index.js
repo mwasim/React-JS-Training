@@ -14,13 +14,14 @@
 //5. Components and Props in react
 //import "./component_props";
 
-//6. Components - Exercise1 - ContactCard
-import ContactCardDemo from "./component_ex_contactcard";
-
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 //import App from "./App";
+
+//6. Components - Exercise1 - ContactCard
+//import ContactCardDemo from "./component_ex_contactcard";
+import ButtonComponentDemo from "./component_ex_button";
 
 const root1 = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -28,6 +29,7 @@ const root1 = ReactDOM.createRoot(document.getElementById("root"));
 root1.render(
   <React.StrictMode>
     {/* <App /> */}
-    <ContactCardDemo />
+    {/* <ContactCardDemo /> */}
+    <ButtonComponentDemo />
   </React.StrictMode>
 );
