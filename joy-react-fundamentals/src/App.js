@@ -18,13 +18,17 @@ import "./App.css";
 
 //6. Components - Exercise1 - ContactCard
 //import ContactCardDemo from "./component_ex_contactcard";
-import ButtonComponentDemo from "./component_ex_button";
+//import ButtonComponentDemo from "./component_ex_button";
+
+//7. Fragments in React Demo
+import FragmentsDemo from "./fragments_demo";
 
 function App() {
   return (
-    <div className="App">
+    <div>
       {/* <ContactCardDemo /> */}
-      <ButtonComponentDemo />
+      {/* <ButtonComponentDemo /> */}
+      <FragmentsDemo />
     </div>
   );
 }
