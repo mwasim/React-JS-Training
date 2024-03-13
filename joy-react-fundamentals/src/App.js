@@ -24,7 +24,10 @@ import "./App.css";
 //import FragmentsDemo from "./fragments_demo";
 
 //8. Mapping over data - ContactsCard demo
-import MappingOverData from "./mapping_over_data_demo";
+//import MappingOverData from "./mapping_over_data_demo";
+
+//8.1 Mapping over data - exercise - avatar demo
+import MappingOverDataAvatarDemo from "./mapping_over_data_ex_avatars";
 
 function App() {
   return (
@@ -32,7 +35,8 @@ function App() {
       {/* <ContactCardDemo /> */}
       {/* <ButtonComponentDemo /> */}
       {/* <FragmentsDemo /> */}
-      <MappingOverData />
+      {/* <MappingOverData /> */}
+      <MappingOverDataAvatarDemo />
     </>
   );
 }
