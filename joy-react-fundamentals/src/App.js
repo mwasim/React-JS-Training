@@ -1,9 +1,30 @@
 import "./App.css";
 
+//1. BUILD YOUR OWN REACT DEMO
+//import "./build_your_own_react.js";
+
+//2. Expression Slots
+//import "./expression_slots.js";
+
+//3. WHITE SPACE GOTCHA
+//import "./white_space_gotcha";
+
+//4. CONVERT RAW HTML TO JSX
+//import "./ex_convert_rawhtml_to_jsx";
+//import "./ex_rawhtml_to_jsx_critter";
+
+//5. Components and Props in react
+//import "./component_props";
+
+//6. Components - Exercise1 - ContactCard
+//import ContactCardDemo from "./component_ex_contactcard";
+import ButtonComponentDemo from "./component_ex_button";
+
 function App() {
   return (
-    <div id="divId" className="App">
-      <h1 style={{ fontWeight: 20, color: `blue` }}>Hello React</h1>
+    <div className="App">
+      {/* <ContactCardDemo /> */}
+      <ButtonComponentDemo />
     </div>
   );
 }
