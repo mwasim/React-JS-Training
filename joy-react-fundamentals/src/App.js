@@ -33,7 +33,10 @@ import "./App.css";
 //import MappingOverDataShoppingCart from "./mapping_over_data_ex_shoppingcart";
 
 //9. Friends list with screen reader support
-import FriendsListWithScreenReaderSupport from "./friend_list_screen_readers_support";
+//import FriendsListWithScreenReaderSupport from "./friend_list_screen_readers_support";
+
+//10. Profile Cards
+import ProfileCardDemo from "./ProfileCard";
 
 function App() {
   return (
@@ -44,7 +47,8 @@ function App() {
       {/* <MappingOverData /> */}
       {/* <MappingOverDataAvatarDemo /> */}
       {/* <MappingOverDataShoppingCart /> */}
-      <FriendsListWithScreenReaderSupport />
+      {/* <FriendsListWithScreenReaderSupport /> */}
+      <ProfileCardDemo />
     </>
   );
 }
