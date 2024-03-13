@@ -12,19 +12,22 @@
 //import "./ex_rawhtml_to_jsx_critter";
 
 //5. Components and Props in react
-import "./component_props";
+//import "./component_props";
 
-/*
+//6. Components - Exercise1 - ContactCard
+import ContactCardDemo from "./component_ex_contactcard";
+
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
-import App from "./App";
+//import App from "./App";
 
 const root1 = ReactDOM.createRoot(document.getElementById("root"));
 
 //const root = ReactDOM.createRoot(document.getElementById("root"));
 root1.render(
   <React.StrictMode>
-    <App />
+    {/* <App /> */}
+    <ContactCardDemo />
   </React.StrictMode>
-);*/
+);
