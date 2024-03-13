@@ -21,15 +21,19 @@ import "./App.css";
 //import ButtonComponentDemo from "./component_ex_button";
 
 //7. Fragments in React Demo
-import FragmentsDemo from "./fragments_demo";
+//import FragmentsDemo from "./fragments_demo";
+
+//8. Mapping over data - ContactsCard demo
+import MappingOverData from "./mapping_over_data_demo";
 
 function App() {
   return (
-    <div>
+    <>
       {/* <ContactCardDemo /> */}
       {/* <ButtonComponentDemo /> */}
-      <FragmentsDemo />
-    </div>
+      {/* <FragmentsDemo /> */}
+      <MappingOverData />
+    </>
   );
 }
 

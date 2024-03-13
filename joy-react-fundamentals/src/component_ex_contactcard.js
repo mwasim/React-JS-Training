@@ -1,6 +1,6 @@
 import React from "react";
 
-const ContactCard = ({ name, jobTitle, email }) => {
+export const ContactCard = ({ name, jobTitle, email }) => {
   return (
     <li className="contact-card">
       <h2>{name}</h2>
