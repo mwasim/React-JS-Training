@@ -36,7 +36,10 @@ import "./App.css";
 //import FriendsListWithScreenReaderSupport from "./friend_list_screen_readers_support";
 
 //10. Profile Cards
-import ProfileCardDemo from "./ProfileCard";
+//import ProfileCardDemo from "./ProfileCard";
+
+//11. Star rating - range utitlity demo (when we cannot use array.map, this utility is useful)
+import StarRatingDemo from "./StarRating";
 
 function App() {
   return (
@@ -48,7 +51,8 @@ function App() {
       {/* <MappingOverDataAvatarDemo /> */}
       {/* <MappingOverDataShoppingCart /> */}
       {/* <FriendsListWithScreenReaderSupport /> */}
-      <ProfileCardDemo />
+      {/* <ProfileCardDemo /> */}
+      <StarRatingDemo />
     </>
   );
 }

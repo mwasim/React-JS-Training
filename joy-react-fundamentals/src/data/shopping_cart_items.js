@@ -7,6 +7,7 @@ const ShoppingCartItems = [
     title: "“Hello Kitty” Coffee Machine",
     price: "89.99",
     inStock: true,
+    starRating: 5,
   },
   {
     id: "co999",
@@ -16,6 +17,7 @@ const ShoppingCartItems = [
     title: "Safety Can Opener",
     price: "19.95",
     inStock: false,
+    starRating: 3,
   },
   {
     id: "cnl333",
@@ -25,6 +27,7 @@ const ShoppingCartItems = [
     title: "Astro-pup Night Light",
     price: "130.00",
     inStock: true,
+    starRating: 4,
   },
   {
     id: "scb777",
@@ -34,6 +37,7 @@ const ShoppingCartItems = [
     title: "Magical Unicorn Backpack",
     price: "74.98",
     inStock: true,
+    starRating: 0,
   },
 ];
 
