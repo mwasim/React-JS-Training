@@ -39,7 +39,10 @@ import "./App.css";
 //import ProfileCardDemo from "./ProfileCard";
 
 //11. Star rating - range utitlity demo (when we cannot use array.map, this utility is useful)
-import StarRatingDemo from "./StarRating";
+//import StarRatingDemo from "./StarRating";
+
+//12. Grid demo - given number or rows and columns, it draw the grid - challenge
+import GridDemo from "./Grid";
 
 function App() {
   return (
@@ -52,7 +55,8 @@ function App() {
       {/* <MappingOverDataShoppingCart /> */}
       {/* <FriendsListWithScreenReaderSupport /> */}
       {/* <ProfileCardDemo /> */}
-      <StarRatingDemo />
+      {/* <StarRatingDemo /> */}
+      <GridDemo />
     </>
   );
 }

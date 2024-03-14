@@ -36,3 +36,21 @@
     transform: rotate(360deg);
   }
 }
+
+/*grid CSS*/
+.grid {
+  text-align: center;
+}
+.grid .row {
+  margin-bottom: 5px;
+}
+
+.grid .cell {
+  background-color: antiquewhite;
+  aspect-ratio: 1;
+  height: 100px;
+  display: inline-flex;
+  /* gap: 5px; */
+  margin-right: 10px;
+  border-radius: 5px;
+}
