@@ -4,13 +4,17 @@ import "./App.css";
 //import Counter from "./Counter";
 
 //2. useState - triggers rerender in batch - Logout demo
-import LogoutUser from "./LogoutUser";
+//import LogoutUser from "./LogoutUser";
+
+//3. useState - get latest values in the 1st render demo
+import Character from "./Character";
 
 function App() {
   return (
     <>
       {/* <Counter /> */}
-      <LogoutUser />
+      {/* <LogoutUser /> */}
+      <Character />
     </>
   );
 }
