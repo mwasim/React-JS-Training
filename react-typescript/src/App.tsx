@@ -5,8 +5,18 @@ import "./basic_data_types";
 //import ComplexDataTypes from "./complex_data_types";
 import Message from "./Message";
 
+//Step-1: Definie variable for initial state
+//object literal - initial state to pass on App component
+const initialState = {
+  name: "Jane",
+  message: "using Typescript with React is cool!",
+};
+
+//Step-2: Define type of the initial state passing down the initial state variable
+type AppState = Readonly<typeof initialState>;
+
 //class/stateful component syntax
-class App extends Component<any> {
+class App extends Component<any, AppState> {
   // componentDidMount(): void {
   //   console.log(`Finally... hello!`);
   // }
@@ -15,11 +25,14 @@ class App extends Component<any> {
   //   console.log(`Almost there...`);
   // }
 
+  //Step-3: Use the initialState of type AppState here by initializing to the variable
+  readonly state: AppState = initialState;
+
   render(): ReactNode {
     return (
       <div className="App">
         <header className="App-header">
-          <Message name="Jen" message="this is a message!" />
+          <Message name={this.state.name} message={this.state.message} />
         </header>
       </div>
     );
