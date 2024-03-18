@@ -1,5 +1,14 @@
-const Message = (prop: { message: string }): any => {
-  return <p>{prop.message}</p>;
+interface UerMessage {
+  name: string;
+  message: string;
+}
+
+const Message = (props: UerMessage): any => {
+  return (
+    <p>
+      {props.name}, {props.message}
+    </p>
+  );
 };
 
 export default Message;

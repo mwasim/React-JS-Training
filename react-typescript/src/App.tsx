@@ -7,9 +7,9 @@ import Message from "./Message";
 
 //class/stateful component syntax
 class App extends Component<any> {
-  componentDidMount(): void {
-    console.log(`Finally... hello!`);
-  }
+  // componentDidMount(): void {
+  //   console.log(`Finally... hello!`);
+  // }
 
   // componentWillMount(): void {
   //   console.log(`Almost there...`);
@@ -19,7 +19,7 @@ class App extends Component<any> {
     return (
       <div className="App">
         <header className="App-header">
-          <Message message="This is a message!" />
+          <Message name="Jen" message="this is a message!" />
         </header>
       </div>
     );
