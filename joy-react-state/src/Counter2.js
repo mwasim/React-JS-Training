@@ -26,6 +26,11 @@ function Counter() {
     let randomNumber = Math.ceil(Math.random() * 100);
     let nextCount = clamp(randomNumber, 1, 100);
     //console.log(nextCount);
+    /*
+        NOTE: We can avaid using the clamp function by using the 
+        below expression to generate a random number between 1 and 100
+        let randomCount = Math.floor(Math.random() * 100) + 1;
+        */
     setCount(nextCount);
   };
 
