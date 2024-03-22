@@ -7,14 +7,18 @@ import "./App.css";
 //import LogoutUser from "./LogoutUser";
 
 //3. useState - get latest values in the 1st render demo
-import Character from "./Character";
+//import Character from "./Character";
+
+//4. Counter 2.0 - Upgraded Counter
+import Counter from "./Counter2";
 
 function App() {
   return (
     <>
       {/* <Counter /> */}
       {/* <LogoutUser /> */}
-      <Character />
+      {/* <Character /> */}
+      <Counter />
     </>
   );
 }
