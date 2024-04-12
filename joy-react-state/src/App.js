@@ -10,7 +10,10 @@ import "./App.css";
 //import Character from "./Character";
 
 //4. Counter 2.0 - Upgraded Counter
-import Counter from "./Counter2";
+//import Counter from "./Counter2";
+
+//5. Search Form
+import SearchForm from "./SearchForm";
 
 function App() {
   return (
@@ -18,7 +21,8 @@ function App() {
       {/* <Counter /> */}
       {/* <LogoutUser /> */}
       {/* <Character /> */}
-      <Counter />
+      {/* <Counter /> */}
+      <SearchForm />
     </>
   );
 }
