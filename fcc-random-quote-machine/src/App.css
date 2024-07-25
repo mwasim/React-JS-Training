@@ -1,0 +1,30 @@
+#quote-box {
+  width: 80%;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: #f1f1f1;
+  border-radius: 10px;
+  text-align: center;
+}
+
+#text {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+#author {
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+#new-quote,
+#tweet-quote {
+  padding: 0.5rem 1rem;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 0.5rem;
+}
